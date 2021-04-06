@@ -17,7 +17,8 @@
 
 
 - name: run cluster
-  hosts: masterservers
+  hosts:
+    - "{{ groups['masterservers'][0] }}"
   roles:
     - run_cluster
 

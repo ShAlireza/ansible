@@ -1,0 +1,12 @@
+- name: enable redis
+  systemd:
+    name: redis
+    masked: false
+    enabled: true
+
+- name: start redis
+  systemd:
+    name: redis
+    state: started
+  become: true
+  become_user: root

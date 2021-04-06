@@ -1,5 +1,5 @@
 - name: initialize
-  hosts: all
+  hosts: singleservers
   roles:
     - common
 

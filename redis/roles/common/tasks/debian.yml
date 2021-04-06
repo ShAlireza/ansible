@@ -1,0 +1,13 @@
+- name: add repository
+  apt_repository:
+    repo: ppa:redislabs/redis
+
+- name: update cache
+  shell:
+    cmd: apt update
+
+- name: install redis debian
+  apt:
+    name: redis
+    state: present
+  become_user: root
