@@ -1,5 +1,7 @@
 - name: initialize
   hosts: singleservers
+  become: true
+  become_user: root
   roles:
     - common
 
@@ -8,4 +10,4 @@
   roles:
     - single
   tags:
-    - single
+    - single-node-redis

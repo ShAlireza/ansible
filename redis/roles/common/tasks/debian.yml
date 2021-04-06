@@ -10,4 +10,3 @@
   apt:
     name: redis
     state: present
-  become_user: root

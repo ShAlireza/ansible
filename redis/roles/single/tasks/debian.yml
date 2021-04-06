@@ -8,5 +8,3 @@
   systemd:
     name: redis-server
     state: started
-  become: true
-  become_user: root
