@@ -1,0 +1,11 @@
+- name: initialize
+  hosts: all
+  roles:
+    - common
+
+- name: deploy
+  hosts: singleservers
+  roles:
+    - single
+  tags:
+    - single

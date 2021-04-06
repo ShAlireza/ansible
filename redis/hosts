@@ -1,0 +1,12 @@
+[masterservers]
+master
+
+[slaveservers]
+slave
+
+[clustercreate]
+cluster_create_server
+
+
+[singleservers]
+single

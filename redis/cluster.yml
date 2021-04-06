@@ -1,0 +1,23 @@
+- name: initialize
+  hosts: all
+  roles:
+    - common
+
+
+- name: deploy masters
+  hosts: masterservers
+  roles:
+    - master
+
+
+- name: deploy slaves
+  hosts: slaveservers
+  roles:
+    - slave
+
+
+- name: run cluster
+  hosts: masterservers
+  roles:
+    - run_cluster
+
