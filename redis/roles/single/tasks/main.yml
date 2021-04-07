@@ -1,8 +1,10 @@
-- name: install redis on debian systems
-  import_tasks: debian.yml
-  when: ansible_facts['os_family']|lower == 'debian'
+- name: enable redis
+  systemd:
+    name: redis
+    masked: false
+    enabled: true
 
-
-- name: install redis on rhel systems
-  import_tasks: rhel.yml
-  when: ansible_facts['os_family']|lower == 'redhat'
+- name: start redis
+  systemd:
+    name: redis
+    state: started
