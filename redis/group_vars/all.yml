@@ -1,0 +1,17 @@
+redis_bind: {{ ansible_eth0.ipv4.address }}
+redis_port:  6379
+redis_logfile: "/var/log/redis/redis.log"
+redis_save:
+  - 900 1
+  - 300 10
+  - 60 10000
+redis_stop_writes_on_bgsave_error: yes
+redis_dbfilename: "dump.rdb"
+redis_dir: "/var/lib/redis"
+redis_maxclients: 10000
+redis_maxmemory: 16gb
+redis_maxmemory_policy: allkeys-lru
+redis_maxmemory_samples: 5
+redis_io_threads: 3
+redis_appendonly: no
+redis_appendfilename: "appendonly.aof"

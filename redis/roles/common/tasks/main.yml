@@ -6,3 +6,10 @@
 - name: install redis on rhel systems
   import_tasks: rhel.yml
   when: ansible_facts['os_family']|lower == 'redhat'
+
+
+- name: create redis conf file
+  template:
+    src: redis.conf.jinja2
+    dest: /etc/redis/redis.conf
+    mode: 0640
