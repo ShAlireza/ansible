@@ -1,0 +1,4 @@
+- name: uninstall redis from specified hosts
+  hosts: uninstallservers
+  roles:
+    - uninstall

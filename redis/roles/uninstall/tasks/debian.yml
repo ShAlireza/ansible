@@ -1,0 +1,6 @@
+- name: purge redis apt
+  apt:
+    name: redis
+    state: absent
+    autoremove: true
+    purge: true

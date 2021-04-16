@@ -1,0 +1,7 @@
+- name: uninstall redis debian sytems
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: uninstall redis rhel systems
+  import_tasks: rhel.yml
+  when: ansible_facts['os_family']|lower == 'redhat'

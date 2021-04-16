@@ -1,0 +1,5 @@
+- name: purge redis yum
+  shell:
+    cmd: yum erase redis
+
+
