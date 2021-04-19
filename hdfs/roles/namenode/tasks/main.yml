@@ -1,0 +1,37 @@
+- name: create directories
+  file:
+    path: {{item}}
+    state: directory
+  with_item: {{hdfs_dfs_namenode_name_dir}}
+
+
+- name: format filesystem
+  command:
+    cmd: 'hdfs namenode -format'
+
+- name: start active namenode
+  command:
+    cmd: 'hdfs --daemon start namenode'
+  when: "'activenamenodeserver' in group_names"
+
+
+- name: copy meta data to standby namenodes
+  command:
+    cmd: 'hdfs namenode -bootstrapStandby'
+  when: "'standbynamenodeservers' in group_names"
+
+
+- name: start standby namenodes
+  command:
+    cmd: 'hdfs --daemon start namenode'
+  when: "'standbynamenodeservers' in group_names"
+
+
+- name: format zkfc in namenodes
+  command:
+    cmd: 'hdfs zkfc -formatZK'
+
+
+- name: start zkfc in namenodes
+  command:
+    cmd: 'hdfs --daemon start zkfc'

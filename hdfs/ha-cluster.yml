@@ -1,0 +1,21 @@
+- name: initializer
+  hosts: all
+  become: true
+  become_user: root
+  roles:
+    - common
+
+- name: start journalnodes
+  hosts: journalnodeservers
+  roles:
+    - journalnode
+
+- name: start namenodes
+  hosts: namenodeservers
+  roles:
+    - namenode
+
+- name: start datanodes
+  hosts: datanodeservers
+  roles:
+    - datanode

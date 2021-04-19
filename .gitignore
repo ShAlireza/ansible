@@ -1,4 +1,6 @@
 .idea/
 venv/
 env/
-*hosts*
+redis/hosts.ini
+hdfs/hosts.ini
+*hosts.yml*

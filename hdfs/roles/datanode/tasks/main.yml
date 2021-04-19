@@ -1,0 +1,5 @@
+- name: create directories
+  file:
+    path: {{item}}
+    state: directory
+  with_item: {{hdfs_dfs_datanode_data_dir}}

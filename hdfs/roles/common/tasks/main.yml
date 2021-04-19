@@ -1,0 +1,57 @@
+- name: install apache hadoop
+  get_url:
+    url: {{hdfs_download_link}}
+    checksum: "sha512:{{hdfs_download_sha_sum}}"
+    dest: {{hdfs_download_destination}}
+
+
+- name: unarchive downloaded file
+  unarchive:
+    remote_src: yes
+    src: {{hdfs_download_destiation}}
+    dest: {{hdfs_unarchive_destination}}
+
+
+- name: change directory name
+  command:
+    cmd: "mv {{hdfs_unarchive_destination}}{{hdfs_unarchived_filename}} {{hdfs_unarchive_destination}}hadoop"
+
+
+- name: create config files
+  template:
+    src: {{ item }}
+    dest: "{{hdfs_hadoop_home}}/etc/hadoop/"
+  with_fileglob:
+    - "../templates/*"
+
+
+- name: add hadoop to path
+  command:
+    cmd: 'echo PATH={{hdfs_hadoop_home}}/bin:{{hdfs_hadoop_home}}/sbin:$PATH >> ~/.profile'
+
+
+- name: create hosts file
+  template:
+    src: hosts.jinja2
+    dest: /etc/hosts
+    mode: 0640
+
+
+- name: create ssh keys
+  command:
+    cmd: ssh-keygen -t rsa -C '$HOSTNAME' -f '$HOME/.ssh/id_rsa' -P ''
+
+
+- name: check fuser installation on rhel
+  yum:
+    name: psmisc
+    state: present
+  when: ansible_facts['os_family']|lower == 'redhat'
+
+
+- name: check fuser installation on debian
+  apt:
+    name: psmisc
+    state: present
+  when: ansible_facts['os_family']|lower == 'debian'
+
