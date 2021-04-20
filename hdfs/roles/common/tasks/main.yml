@@ -53,7 +53,7 @@
 
 
 - name: add hadoop to path
-  command:
+  shell:
     cmd: 'echo PATH={{hdfs_hadoop_home}}/bin:{{hdfs_hadoop_home}}/sbin:$PATH >> ~/.profile'
 
 
