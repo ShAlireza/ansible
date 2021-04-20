@@ -1,3 +1,10 @@
+- name: delete directories
+  file:
+    state: absent
+    path: '{{item}}'
+  with_items: '{{hdfs_dfs_datanode_data_dir}}'
+
+
 - name: create directories
   file:
     path: '{{item}}'

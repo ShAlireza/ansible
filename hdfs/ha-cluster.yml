@@ -10,12 +10,12 @@
   roles:
     - journalnode
 
-- name: start namenodes
-  hosts: namenodeservers
-  roles:
-    - namenode
-
 - name: start datanodes
   hosts: datanodeservers
   roles:
     - datanode
+
+- name: start namenodes
+  hosts: namenodeservers
+  roles:
+    - namenode
