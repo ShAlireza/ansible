@@ -381,10 +381,13 @@ proc-title-template "{title} {listen-addr} {server-mode}"
 # save 3600 1
 # save 300 100
 # save 60 10000
-
+{% if redis_save %}
 {% for save in redis_save %}
 save {{ save }}
 {% endfor %}
+{% else %}
+save {{ redis_save }}
+{% endif %}
 
 
 # By default Redis will stop accepting writes if RDB snapshots are enabled
