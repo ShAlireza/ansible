@@ -30,6 +30,13 @@ hdfs_java_home: /usr
 hdfs_hadoop_home: /opt/hadoop
 hdfs_hadoop_conf_dir: /opt/hadoop/etc/hadoop
 hdfs_hadoop_daemon_root_logger: WARN,RFA
+hdfs_hadoop_heapsize_max: ''
+hdfs_hadoop_heapsize_min: ''
+hdfs_hadoop_jaas_debug: ''
+hdfs_hadoop_workers: ''
+hdfs_hadoop_log_dir: ''
+hdfs_hadoop_pid_dir: ''
+hdfs_hadoop_niceness: ''
 
 
 # hdfs-site.xml
@@ -45,3 +52,4 @@ hdfs_dfs_datanode_data_dir:
 hdfs_ha_automatic_failover_enabled: "true"
 hdfs_dfs_ha_fencing_methods: "sshfence"
 hdfs_dfs_ha_fencing_ssh_private_key_files: /root/.ssh/id_rsa
+hdfs_dfs_namenode_datanode_registration_ip_hostname_check: ''

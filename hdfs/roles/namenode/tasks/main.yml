@@ -1,37 +1,57 @@
 - name: create directories
   file:
-    path: {{item}}
+    path: '{{item}}'
     state: directory
-  with_item: {{hdfs_dfs_namenode_name_dir}}
+  with_items: '{{hdfs_dfs_namenode_name_dir}}'
+
+
+#- name: start active namenode
+#  command:
+#    cmd: '{{hdfs_hadoop_home}}/bin/hdfs --daemon start namenode'
+#  when: "'activenamenodeserver' in group_names"
+
+
+- name: start cluster
+  command:
+    cmd: '{{hdfs_hadoop_home}}/sbin/start-dfs.sh'
+  when: "'activenamenodeserver' in group_names"
 
 
 - name: format filesystem
   command:
-    cmd: 'hdfs namenode -format'
+    cmd: '{{hdfs_hadoop_home}}/bin/hdfs namenode -format'
+  when: "'activenamenodeserver' in group_names"
 
-- name: start active namenode
+
+- name: format zkfc in namenodes
   command:
-    cmd: 'hdfs --daemon start namenode'
+    cmd: '{{hdfs_hadoop_home}}/bin/hdfs zkfc -formatZK'
+
+
+- name: stop cluster
+  command:
+    cmd: '{{hdfs_hadoop_home}}/sbin/stop-dfs.sh'
+  when: "'activenamenodeserver' in group_names"
+
+
+- name: start cluster
+  command:
+    cmd: '{{hdfs_hadoop_home}}/sbin/start-dfs.sh'
   when: "'activenamenodeserver' in group_names"
 
 
 - name: copy meta data to standby namenodes
   command:
-    cmd: 'hdfs namenode -bootstrapStandby'
+    cmd: '{{hdfs_hadoop_home}}/bin/hdfs namenode -bootstrapStandby'
   when: "'standbynamenodeservers' in group_names"
 
 
 - name: start standby namenodes
   command:
-    cmd: 'hdfs --daemon start namenode'
+    cmd: '{{hdfs_hadoop_home}}/bin/hdfs --daemon start namenode'
   when: "'standbynamenodeservers' in group_names"
 
 
-- name: format zkfc in namenodes
-  command:
-    cmd: 'hdfs zkfc -formatZK'
-
-
-- name: start zkfc in namenodes
-  command:
-    cmd: 'hdfs --daemon start zkfc'
+#- name: start zkfc in namenodes
+#  command:
+#    cmd: '{{hdfs_hadoop_home}}/bin/hdfs --daemon start zkfc'

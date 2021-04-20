@@ -6,7 +6,7 @@
     - common
 
 - name: start journalnodes
-  hosts: journalnodeservers
+  hosts: qjournalnodeservers
   roles:
     - journalnode
 

@@ -23,7 +23,7 @@
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>{% for dir in hdfs_dfs_namenode_name_dir %}dir,{% endfor %}</value>
+        <value>{% for dir in hdfs_dfs_namenode_name_dir %}{{ dir }},{% endfor %}</value>
     </property>
     <property>
         <name>dfs.nameservices</name>
@@ -59,7 +59,7 @@
 
     <property>
         <name>dfs.namenode.shared.edits.dir</name>
-        <value>qjournal://{{ groups['qjournalnodeservers']|join(":8485;") }}/{{ hdfs_dfs_nameservices }}</value>
+        <value>qjournal://{{ groups['qjournalnodeservers']|join(":8485;") }}:8485/{{ hdfs_dfs_nameservices }}</value>
     </property>
 
     <property>

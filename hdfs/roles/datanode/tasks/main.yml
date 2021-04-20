@@ -1,5 +1,10 @@
 - name: create directories
   file:
-    path: {{item}}
+    path: '{{item}}'
     state: directory
-  with_item: {{hdfs_dfs_datanode_data_dir}}
+  with_items: '{{hdfs_dfs_datanode_data_dir}}'
+
+
+#- name: start datanodes
+#  command:
+#    cmd: '{{hdfs_hadoop_home}}/bin/hdfs --daemon start datanode'

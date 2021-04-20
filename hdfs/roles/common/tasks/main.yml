@@ -1,28 +1,63 @@
-- name: install apache hadoop
-  get_url:
-    url: {{hdfs_download_link}}
-    checksum: "sha512:{{hdfs_download_sha_sum}}"
-    dest: {{hdfs_download_destination}}
+- name: check if file exists
+  stat:
+    path: '{{hdfs_download_destination}}'
+  register: stat_result
+
+- name: download apache hadoop
+  command:
+    cmd: 'wget {{hdfs_download_link}} -O {{hdfs_download_destination}}'
+  when: not stat_result.stat.exists
 
 
 - name: unarchive downloaded file
-  unarchive:
-    remote_src: yes
-    src: {{hdfs_download_destiation}}
-    dest: {{hdfs_unarchive_destination}}
+  command:
+    cmd: 'tar xzvf {{hdfs_download_destination}} -C {{hdfs_unarchive_destination}}'
+
+
+- name: remove similar directory
+  command:
+    cmd: "rm -rf {{hdfs_unarchive_destination}}hadoop"
 
 
 - name: change directory name
   command:
-    cmd: "mv {{hdfs_unarchive_destination}}{{hdfs_unarchived_filename}} {{hdfs_unarchive_destination}}hadoop"
+    cmd: "mv -f {{hdfs_unarchive_destination}}{{hdfs_unarchived_filename}} {{hdfs_unarchive_destination}}hadoop"
 
 
-- name: create config files
+#- name: create config files
+#  template:
+#    src: '{{ item }}'
+#    dest: "{{hdfs_hadoop_home}}/etc/hadoop/{{item|replace('.jinja2','')}}"
+#  with_fileglob:
+#    - "../templates/*"
+
+
+- name: create core-site.xml
   template:
-    src: {{ item }}
-    dest: "{{hdfs_hadoop_home}}/etc/hadoop/"
-  with_fileglob:
-    - "../templates/*"
+    src: core-site.xml.jinja2
+    dest: "{{hdfs_hadoop_home}}/etc/hadoop/core-site.xml"
+    mode: 0640
+
+
+- name: create hadoop-env.sh
+  template:
+    src: hadoop-env.sh.jinja2
+    dest: "{{hdfs_hadoop_home}}/etc/hadoop/hadoop-env.sh"
+    mode: 0640
+
+
+- name: create hdfs-site.xml
+  template:
+    src: hdfs-site.xml.jinja2
+    dest: "{{hdfs_hadoop_home}}/etc/hadoop/hdfs-site.xml"
+    mode: 0640
+
+
+- name: create workers
+  template:
+    src: workers.jinja2
+    dest: "{{hdfs_hadoop_home}}/etc/hadoop/workers"
+    mode: 0640
 
 
 - name: add hadoop to path
@@ -37,9 +72,9 @@
     mode: 0640
 
 
-- name: create ssh keys
-  command:
-    cmd: ssh-keygen -t rsa -C '$HOSTNAME' -f '$HOME/.ssh/id_rsa' -P ''
+#- name: create ssh keys
+#  command:
+#    cmd: "ssh-keygen -t rsa -C \$HOSTNAME -f \$HOME/.ssh/id_rsa -P ''"
 
 
 - name: check fuser installation on rhel
