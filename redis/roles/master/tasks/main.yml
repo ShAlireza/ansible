@@ -1,0 +1,16 @@
+- name: create init_cluster script
+  template:
+    src: init_cluster.sh.jinja2
+    dest: ~/init_cluster.sh
+    mode: 0740
+
+
+- name: init cluster
+  shell:
+    cmd: sh ~/init_cluster.sh
+
+
+- name: remove script
+  file:
+    path: ~/init_cluster.sh
+    state: absent

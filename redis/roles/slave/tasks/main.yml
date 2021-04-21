@@ -1,0 +1,2 @@
+- name: join slave to cluster
+  local_action: "shell ssh root@{{hostvars[inventory_hostname]['master']}} 'redis-cli --cluster add-node {{inventory_hostname}}:{{redis_port}} {{hostvars[inventory_hostname]['master']}}:{{redis_port}} --cluster-slave --cluster-master-id `redis-cli cluster myid`'"

@@ -1407,6 +1407,8 @@ lua-time-limit 5000
 #
 # cluster-enabled yes
 
+cluster-enabled {{ redis_cluster_enabled }}
+
 # Every cluster node has a cluster configuration file. This file is not
 # intended to be edited by hand. It is created and updated by Redis nodes.
 # Every Redis Cluster node requires a different cluster configuration file.
@@ -1415,11 +1417,15 @@ lua-time-limit 5000
 #
 # cluster-config-file nodes-6379.conf
 
+cluster-config-file {{ redis_cluster_config_file }}
+
 # Cluster node timeout is the amount of milliseconds a node must be unreachable
 # for it to be considered in failure state.
 # Most other internal time limits are a multiple of the node timeout.
 #
 # cluster-node-timeout 15000
+
+cluster-node-timeout {{ redis_cluster_node_timeout }}
 
 # A replica of a failing master will avoid to start a failover if its data
 # looks too old.
@@ -1466,6 +1472,8 @@ lua-time-limit 5000
 #
 # cluster-replica-validity-factor 10
 
+cluster-replica-validity-factor {{ redis_cluster_replica_validity_factor }}
+
 # Cluster replicas are able to migrate to orphaned masters, that are masters
 # that are left without working replicas. This improves the cluster ability
 # to resist to failures as otherwise an orphaned master can't be failed over
@@ -1486,6 +1494,8 @@ lua-time-limit 5000
 #
 # cluster-migration-barrier 1
 
+cluster-migration-barrier {{ redis_cluster_migration_barrier }}
+
 # Turning off this option allows to use less automatic cluster configuration.
 # It both disables migration to orphaned masters and migration from masters
 # that became empty.
@@ -1493,6 +1503,8 @@ lua-time-limit 5000
 # Default is 'yes' (allow automatic migrations).
 #
 # cluster-allow-replica-migration yes
+
+cluster-allow-replica-migration {{ redis_cluster_allow_replica_migration }}
 
 # By default Redis Cluster nodes stop accepting queries if they detect there
 # is at least a hash slot uncovered (no available node is serving it).
@@ -1507,6 +1519,8 @@ lua-time-limit 5000
 #
 # cluster-require-full-coverage yes
 
+cluster-require-full-coverage {{ redis_cluster_require_full_coverage }}
+
 # This option, when set to yes, prevents replicas from trying to failover its
 # master during master failures. However the replica can still perform a
 # manual failover, if forced to do so.
@@ -1516,6 +1530,8 @@ lua-time-limit 5000
 # in the case of a total DC failure.
 #
 # cluster-replica-no-failover no
+
+cluster-replica-no-failover {{ redis_cluster_replica_no_failover }}
 
 # This option, when set to yes, allows nodes to serve read traffic while the
 # the cluster is in a down state, as long as it believes it owns the slots.
@@ -1532,6 +1548,8 @@ lua-time-limit 5000
 # Without a quorum of masters, slot ownership will not change automatically.
 #
 # cluster-allow-reads-when-down no
+
+cluster-allow-reads-when-down {{ redis_cluster_allow_reads_when_down }}
 
 # In order to setup your cluster make sure to read the documentation
 # available at https://redis.io web site.

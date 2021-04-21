@@ -1,0 +1,9 @@
+redis_cluster_enabled: "yes"
+redis_cluster_config_file: "nodes-6379.conf"
+redis_cluster_node_timeout: 5000
+redis_cluster_replica_validity_factor: 10
+redis_cluster_migration_barrier: 1
+redis_cluster_allow_replica_migration: "yes"
+redis_cluster_require_full_coverage: "yes"
+redis_cluster_replica_no_failover: "no"
+redis_cluster_allow_reads_when_down: "no"

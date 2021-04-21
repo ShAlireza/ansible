@@ -1,0 +1,4 @@
+- name: initialize
+  hosts: all
+  roles:
+    - common

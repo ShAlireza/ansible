@@ -1,0 +1,1 @@
+redis-cli --cluster add-node {{ host }}:{{ redis_port }} {{ ansible_default_ipv4.address }}:{{ redis_port }} --cluster-slave --cluster-master-id `redis-cli cluster myid`

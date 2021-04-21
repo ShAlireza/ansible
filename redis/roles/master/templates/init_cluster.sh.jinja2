@@ -1,0 +1,1 @@
+yes yes | redis-cli --cluster create {% for host in groups['masterservers'] %}{{ host }}:{{ redis_port }} {% endfor %}

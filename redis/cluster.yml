@@ -4,21 +4,19 @@
     - common
 
 
-- name: deploy masters
-  hosts: masterservers
+- name: run redis instances
+  hosts: all
+  roles:
+    - single
+
+
+- name: run masters in a cluster
+  hosts: "{{groups['masterservers'][0]}}"
   roles:
     - master
 
 
-- name: deploy slaves
+- name: add slaves to their specified master
   hosts: slaveservers
   roles:
     - slave
-
-
-- name: run cluster
-  hosts:
-    - "{{ groups['masterservers'][0] }}"
-  roles:
-    - run_cluster
-

@@ -5,3 +5,8 @@
 - name: uninstall redis rhel systems
   import_tasks: rhel.yml
   when: ansible_facts['os_family']|lower == 'redhat'
+
+- name: delete vars
+  file:
+    path: "/var/lib/redis"
+    state: absent
