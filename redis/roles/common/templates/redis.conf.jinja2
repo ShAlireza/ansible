@@ -1093,6 +1093,11 @@ maxmemory-samples {{ redis_maxmemory_samples }}
 #
 # active-expire-effort 1
 
+{% if redis_active_expire_effort %}
+    active-expire-effort {{ redis_active_expire_effort }}
+{% endif %}
+
+
 ############################# LAZY FREEING ####################################
 
 # Redis has two primitives to delete keys. One is called DEL and is a blocking
