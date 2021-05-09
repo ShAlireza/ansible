@@ -8,6 +8,7 @@ redis_logfile: "/var/log/redis/redis.log"
 redis_save: ""
 
 redis_hz: 10
+redis_active_defrag: "no"
 
 redis_stop_writes_on_bgsave_error: "yes"
 redis_dbfilename: "dump.rdb"

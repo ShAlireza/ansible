@@ -2039,6 +2039,10 @@ rdb-save-incremental-fsync yes
 # Enabled active defragmentation
 # activedefrag no
 
+{% if redis_active_defrag %}
+activedefrag {{ redis_active_defrag }}
+{% endif %}
+
 # Minimum amount of fragmentation waste to start active defrag
 # active-defrag-ignore-bytes 100mb
 
