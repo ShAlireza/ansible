@@ -11,7 +11,7 @@ redis_stop_writes_on_bgsave_error: "yes"
 redis_dbfilename: "dump.rdb"
 redis_dir: "/var/lib/redis"
 redis_maxclients: 10000
-redis_maxmemory: 10gb
+redis_maxmemory: 8gb
 redis_maxmemory_policy: allkeys-lru
 redis_maxmemory_samples: 5
 redis_io_threads: 1
