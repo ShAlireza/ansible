@@ -14,6 +14,8 @@
       - zsh
       - git
       - byobu
+      - vim
+      - curl
     state: present
   when: ansible_facts['os_family']|lower == 'debian'
 
@@ -26,6 +28,8 @@
       - git
       - epel-release
       - byobu
+      - vim
+      - curl
     state: present
   when: ansible_facts['os_family']|lower == 'redhat'
 
