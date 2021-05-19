@@ -1,0 +1,4 @@
+- name: beautifilize
+  hosts: servers
+  roles:
+    - beautifulize
