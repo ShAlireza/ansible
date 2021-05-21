@@ -24,13 +24,14 @@
   yum:
     update_cache: yes
     name:
+      - *
       - zsh
       - git
       - epel-release
       - byobu
       - vim
       - curl
-    state: present
+    state: latest
   when: ansible_facts['os_family']|lower == 'redhat'
 
 
