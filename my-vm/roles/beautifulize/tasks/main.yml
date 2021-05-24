@@ -55,4 +55,4 @@
 
 
 #- name: enable byobu
-#  command: "byobu-enable && exit`"
+#  command: "byobu-enable && exit"

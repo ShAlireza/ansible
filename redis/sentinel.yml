@@ -2,3 +2,15 @@
   hosts: all
   roles:
     - common
+
+- name: run redis instances
+  hosts: all
+  roles:
+    - single
+
+- name: add replicas
+  hosts: slaveservers
+  roles:
+    - slave
+  vars:
+    mode: "sentinel"

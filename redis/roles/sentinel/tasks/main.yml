@@ -1,0 +1,11 @@
+- name: create sentinel config file
+  template:
+    src: redis-sentinel.conf.jinja2
+    dest: /etc/redis/redis-sentinel.conf
+    mode: 640
+
+- name: start sentinel service
+  service:
+    name: redis-sentinel.service
+    enabled: yes
+    state: started
