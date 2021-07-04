@@ -1,0 +1,10 @@
+- name: Minio Cluster Setup
+  gather_facts: true
+  hosts: minio
+  roles:
+    - common
+    - install
+    - service
+  vars:
+    download_latest: no
+    download_client_latest: no

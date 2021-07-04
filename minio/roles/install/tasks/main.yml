@@ -1,0 +1,55 @@
+- name: Downloading Minio | AMD-64 bit | {{ minio_default_install_dir }}/minio
+  get_url:
+    url: https://dl.minio.io/server/minio/release/linux-amd64/minio
+    dest: "{{ minio_default_install_dir }}/minio"
+    mode: 0775
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+  when: download_latest
+
+- name: Copying Minio | AMD-64 bit | {{ minio_default_install_dir }}/minio
+  copy:
+    src: minio
+    dest: "{{ minio_default_install_dir }}/minio"
+    mode: 0775
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+  when: not download_latest
+
+
+- name: Downloading Minio Client | AMD-64 bit | {{ minio_default_install_dir }}/mc
+  get_url:
+    url: https://dl.minio.io/server/minio/release/linux-amd64/mc
+    dest: "{{ minio_default_install_dir }}/mc"
+    mode: 0775
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+  when: download_client_latest
+
+
+- name: Copying Minio Client | AMD-64 bit | {{ minio_default_install_dir }}/mc
+  copy:
+    src: mc
+    dest: "{{ minio_default_install_dir }}/mc"
+    mode: 0775
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+  when: not download_client_latest
+
+
+- name: Creating Config.json | from Template
+  template:
+    src: config.json.jinja2
+    dest: "{{ minio_default_config_dir }}/config.json"
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+    mode: 0600
+
+
+- name: Creating minio.env file | from Template
+  template:
+    src: minio.env.jinja2
+    dest: "{{ minio_env_file_path }}"
+    owner: "{{ minio_user }}"
+    group: "{{ minio_group }}"
+    mode: 0600
