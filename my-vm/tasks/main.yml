@@ -1,0 +1,20 @@
+#- name: add ssh public keys to authroized_keys
+#  lineinfile:
+#    line: "{{item}}"
+#    dest: "~/.ssh/authorized_keys"
+#    state: present
+#    create: yes
+#  with_items: "{{ssh_public_keys}}"
+#  when: add_ssh_key
+
+
+- name: install install some initial packages
+  package:
+    update_cache: yes
+    name: {{ packages }}
+    state: present
+  when:
+    - install_packages
+
+- include_tasks: zsh.yaml
+  when: install_zsh

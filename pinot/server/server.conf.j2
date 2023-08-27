@@ -1,0 +1,13 @@
+pinot.server.netty.host={{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}
+pinot.server.instance.enable.split.commit=true
+pinot.server.instance.enable.commitend.metadata=true
+pinot.server.instance.realtime.alloc.offheap=false
+pinot.server.storage.factory.class.hdfs=org.apache.pinot.plugin.filesystem.HadoopPinotFS
+pinot.server.storage.factory.hdfs.hadoop.conf.path=/opt/hadoop/etc/hadoop/
+pinot.server.segment.fetcher.protocols=file,http,hdfs
+pinot.server.segment.fetcher.hdfs.class=org.apache.pinot.common.utils.fetcher.PinotFSSegmentFetcher
+pinot.set.instance.id.to.hostname=true
+pinot.server.instance.dataDir=/tmp/dataDir
+pinot.server.instance.segmentTarDir=/tmp/segmentTarDir
+pinot.server.grpc.enable=true
+pinot.server.grpc.port=8090

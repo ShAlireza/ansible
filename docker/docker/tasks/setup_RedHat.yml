@@ -1,0 +1,34 @@
+---
+- name: Uninstall old version
+  package:
+    name:
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-engine
+      - runc
+    state: absent
+
+- name: Install dependencies
+  yum:
+    name:
+      - yum-utils
+    state: present
+
+- name: Add Docker yum gpg key
+  rpm_key:
+    key: "{{ docker_yum_gpg_key_url }}"
+    state: present
+
+- name: Add Docker repository
+  get_url:
+    url: "{{ docker_yum_repo }}"
+    dest: "/etc/yum.repos.d/docker-{{ docker_edition }}.repo"
+    owner: root
+    group: root
+    mode: 0644
+

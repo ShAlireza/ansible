@@ -14,9 +14,9 @@ hdfs_fs_defaultFS: "ha-cluster"
 hdfs_trash_interval: 1440
 hdfs_dfs_journalnode_edits_dir: "/root/HA/data/jn"
 hdfs_ha_zookeeper_quorum:
-  - "172.16.4.100:2181"
-  - "172.16.4.102:2181"
-  - "172.16.4.104:2181"
+  - "172.16.4.118:2181"
+  - "172.16.4.119:2181"
+  - "172.16.4.120:2181"
 
 
 # hadoop-env.sh

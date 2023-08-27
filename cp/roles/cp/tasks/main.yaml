@@ -1,0 +1,8 @@
+---
+- name: cp file
+  copy:
+    dest: "{{ dest }}"
+    src: "{{ src }}"
+    owner: "{{ owner }}"
+    group: "{{ group }}"
+    mode: "{{ mode }}"

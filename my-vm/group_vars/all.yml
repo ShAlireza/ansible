@@ -22,3 +22,27 @@ ssh_public_keys:
   OCDur472g1ESnAaD2lA1IhGkG82yKOQecVjNddqgwP/2xLNmVXbhG3M0OKK8cD6\
   jO/G+NFRvqxaPyNH92mNNXtyUpnA0Y19ZF8kE5MhNaqFLzf5arbbqAl4keiJ7W+\
   +Ow7NuuS58g9QOsg+NCi9 alirezashateri7@gmail.com"
+
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDa5Xwn5/jIee+Jdu6AK2XfGU2TyQN7EtHjJP15bm66G0Mre7pFnSaJquXy3OWs8ZcdN4xb2AogJ4N9qOaXgDjZHqjFdXuCuHqRj+nHT3lEi0OafY6z6QY1M3bIj5Zria7f66YeazOkiOtFo22dwmlKlgf8hxb4me27IoYnlHOAplPhvahsHE210F+DiJzksMV4AKl33rtwwo3EcuauFtXNOEqlQ5QyW9S648fB4oBG2Tqv+k6/C5LFTdOQwRljTMuz6qEAryZlTEiaHsJX/bryeS5OwXBN5vzKJtm1zWhkXUzBp9lHnm/1k1iAoY0PYTpNhoTrkMfrlYjomjA3MOSNjc+sfeN8enDbjyxr25ValK1kVfFEclvyyd5QsxVIEKraafmbwuymjomHvZvKS62/zIGZwpq/9Oy7Pur2fekCO3U1vaIx5p5s2B/DGz2kIH0rg4hcfGh2CTePUHjHF2k9tQXJNXApcxDxmUY3tEMFD4RBTrE5/In0oir7tlDztTSr/fjqyOP+AzeiwIaymy5Vlf3xN318onwf93I/MasXOBaOxELPy1+0JhqTKo3SlPZZ81oxnuyTvjDdOA/5PwbAFeFo+m4/SZ2t2IQCUwqGoqnoxUNNZIzZvAk23M/lO4yon+MORK1Ze2ZhSgLN1XcEFRNjo1O+IQ84yVu/dU137Q== user@alireza"
+ 
+user: "root"
+group: "root"
+
+install_zsh: true
+zsh_theme: "jonathan"
+packages:
+  - zsh
+  - git
+  - byobu
+  - vim
+  - curl
+  - xclip
+
+zsh_plugins:
+  git: 
+  zsh-autoseggestions: "https://github.com/zsh-users/zsh-autosuggestions"
+  zsh-vi-mode: "https://github.com/jeffreytse/zsh-vi-mode"
+    #  zsh-interactive-cd: ""
+    # jump: 
+
+

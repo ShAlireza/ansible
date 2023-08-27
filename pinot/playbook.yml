@@ -1,0 +1,114 @@
+---
+- hosts: all
+  vars:
+    docker_compose_version: "1.29.2"
+  roles:
+    - geerlingguy.docker
+
+  tasks:
+    - name: Ensures /opt/pinot dir exists
+      file:
+        path: /opt/pinot
+        state: directory
+
+    - name: If hadoop binaries exists
+      stat:
+        path: /opt/hadoop-3.0.0
+      register: hadoop_binaries
+
+
+    - name: Get hadoop binaries
+      unarchive:
+        src: 'https://archive.apache.org/dist/hadoop/core/hadoop-3.0.0/hadoop-3.0.0.tar.gz'
+        dest: /opt/
+        remote_src: yes
+      when: not hadoop_binaries.stat.exists
+
+    - name: create symlinlk
+      file:
+        src: "/opt/hadoop-3.0.0"
+        dest: "/opt/hadoop"
+        state: link
+
+    - name: copy hdfs config
+      copy:
+        src: hdfs-production/hadoop
+        dest: /opt/hadoop/etc/
+
+
+
+- hosts: controller
+  tasks:
+    - name: Copy docker-compose.yml file
+      copy:
+        src: "./controller/{{ item }}"
+        dest: "/opt/pinot/{{ item }}"
+      with_items:
+        - docker-compose.yml
+        - .env
+
+    - name: Copy copy files
+      template:
+        src: "controller/controller.conf.j2"
+        dest: "/opt/pinot/controller.conf"
+
+    - name: run docker-compose
+      shell: 
+        chdir: /opt/pinot
+        cmd: docker-compose up -d --build
+      #docker_compose:
+      #  project_src: /opt/pinot
+      #  state: present
+      #  build: yes
+
+- hosts: broker
+  tasks:
+    - name: Copy docker-compose.yml file
+      copy:
+        src: "./broker/{{ item }}"
+        dest: "/opt/pinot/{{ item }}"
+      with_items:
+        - docker-compose.yml
+        - .env
+
+    - name: Copy copy files
+      template:
+        src: "broker/broker.conf.j2"
+        dest: "/opt/pinot/broker.conf"
+
+    - name: run docker-compose
+      shell: 
+        chdir: /opt/pinot
+        cmd: docker-compose up -d --build
+
+      #docker_compose:
+      #  project_src: /opt/pinot
+      #  state: present
+      #  build: yes
+
+
+- hosts: server
+  tasks:
+    - name: Copy docker-compose.yml file
+      copy:
+        src: "./server/{{ item }}"
+        dest: "/opt/pinot/{{ item }}"
+      with_items:
+        - docker-compose.yml
+        - .env
+
+    - name: Copy copy files
+      template:
+        src: "server/server.conf.j2"
+        dest: "/opt/pinot/server.conf"
+
+    - name: run docker-compose
+      shell: 
+        chdir: /opt/pinot
+        cmd: docker-compose up -d --build
+      #docker_compose:
+      #  project_src: /opt/pinot
+      #  state: present
+      #  build: yes
+
+

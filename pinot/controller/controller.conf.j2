@@ -1,0 +1,15 @@
+controller.host={{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}
+controller.data.dir=hdfs://cluster0/pinot/controller/
+controller.local.temp.dir=/tmp/pinot/
+controller.enable.split.commit=true
+controller.access.protocols.http.port=9000
+controller.zk.str=172.30.125.45:2181,172.30.125.46:2181,172.30.125.47:2181
+controller.helix.cluster.name=PinotCluster
+pinot.controller.storage.factory.class.hdfs=org.apache.pinot.plugin.filesystem.HadoopPinotFS
+pinot.controller.storage.factory.hdfs.hadoop.conf.path=/opt/hadoop/etc/hadoop/
+pinot.controller.segment.fetcher.protocols=file,http,hdfs
+pinot.controller.segment.fetcher.hdfs.class=org.apache.pinot.common.utils.fetcher.PinotFSSegmentFetcher
+controller.vip.port=9000
+controller.port=9000
+pinot.set.instance.id.to.hostname=true
+pinot.server.grpc.enable=true

@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  pinot-broker:
+    image: apachepinot/pinot:${PINOT_VERSION}
+    command: "StartBroker -zkAddress 172.30.125.45:2181,172.30.125.46:2181,172.30.125.47:2181 -clusterName PinotCluster -configFile /opt/pinot/conf/broker.conf"
+    network_mode: host
+    volumes:
+      - /opt/hadoop:/opt/hadoop
+      - ./broker.conf:/opt/pinot/conf/broker.conf
+    restart: unless-stopped
+    container_name: "manual-pinot-broker"
+    extra_hosts:
+      - "Sky-DatalakeKafka1.kafka.bigdata.digikala.com:172.16.11.201"
+      - "Sky-DatalakeKafka0.kafka.bigdata.digikala.com:172.16.11.202"
+      - "Sky-DatalakeKafka2.kafka.bigdata.digikala.com:172.16.11.203"
+        #    ports:
+        #      - "8099:8099"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Dplugins.dir=/opt/pinot/plugins -Xms4G -Xmx24G -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -Xloggc:gc-pinot-broker.log -javaagent:/opt/pinot/etc/jmx_prometheus_javaagent/jmx_prometheus_javaagent-0.12.0.jar=8888:/opt/pinot/etc/jmx_prometheus_javaagent/configs/pinot.yml"
+      CLASSPATH_PREFIX: "${HADOOP_HOME}/share/hadoop/hdfs/hadoop-hdfs-client-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/hdfs/hadoop-hdfs-native-client-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/hdfs/hadoop-hdfs-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/lib/hadoop-annotations-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/lib/hadoop-auth-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/hadoop-common-${HADOOP_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/lib/guava-${HADOOP_GUAVA_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/lib/gson-${HADOOP_GSON_VERSION}.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-configuration2-2.1.1.jar:${HADOOP_HOME}/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar"

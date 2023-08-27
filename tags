@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HADOOP_CLASSPATH	hdfs/hadoop_config_files/hadoop-env.cmd	/^    set HADOOP_CLASSPATH=%HADOOP_CLASSPATH%;%HADOOP_HOME%\\contrib\\capacity-scheduler\\*.jar$/;"	v
+HADOOP_CLASSPATH	hdfs/hadoop_config_files/hadoop-env.cmd	/^    set HADOOP_CLASSPATH=%HADOOP_HOME%\\contrib\\capacity-scheduler\\*.jar$/;"	v
+HADOOP_CLASSPATH	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^    set HADOOP_CLASSPATH=%HADOOP_CLASSPATH%;%HADOOP_HOME%\\contrib\\capacity-scheduler\\*.jar$/;"	v
+HADOOP_CLASSPATH	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^    set HADOOP_CLASSPATH=%HADOOP_HOME%\\contrib\\capacity-scheduler\\*.jar$/;"	v
+HADOOP_CLIENT_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_CLIENT_OPTS=-Xmx512m %HADOOP_CLIENT_OPTS%$/;"	v
+HADOOP_CLIENT_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_CLIENT_OPTS=-Xmx512m %HADOOP_CLIENT_OPTS%$/;"	v
+HADOOP_CONF_DIR	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_CONF_DIR=$/;"	v
+HADOOP_CONF_DIR	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_CONF_DIR=$/;"	v
+HADOOP_DATANODE_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_DATANODE_OPTS=-Dhadoop.security.logger=ERROR,RFAS %HADOOP_DATANODE_OPTS%$/;"	v
+HADOOP_DATANODE_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_DATANODE_OPTS=-Dhadoop.security.logger=ERROR,RFAS %HADOOP_DATANODE_OPTS%$/;"	v
+HADOOP_DFSROUTER_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_DFSROUTER_OPTS=""$/;"	v
+HADOOP_DFSROUTER_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_DFSROUTER_OPTS=""$/;"	v
+HADOOP_HEAPSIZE	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_HEAPSIZE=$/;"	v
+HADOOP_HEAPSIZE	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_HEAPSIZE=$/;"	v
+HADOOP_IDENT_STRING	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_IDENT_STRING=%USERNAME%$/;"	v
+HADOOP_IDENT_STRING	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_IDENT_STRING=%USERNAME%$/;"	v
+HADOOP_JAVA_PLATFORM_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_JAVA_PLATFORM_OPTS="-XX:-UsePerfData %HADOOP_JAVA_PLATFORM_OPTS%"$/;"	v
+HADOOP_JAVA_PLATFORM_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_JAVA_PLATFORM_OPTS="-XX:-UsePerfData %HADOOP_JAVA_PLATFORM_OPTS%"$/;"	v
+HADOOP_JOB_HISTORYSERVER_HEAPSIZE	hdfs/hadoop_config_files/mapred-env.cmd	/^set HADOOP_JOB_HISTORYSERVER_HEAPSIZE=1000$/;"	v
+HADOOP_JOB_HISTORYSERVER_HEAPSIZE	pinot/hdfs-production/hadoop/mapred-env.cmd	/^set HADOOP_JOB_HISTORYSERVER_HEAPSIZE=1000$/;"	v
+HADOOP_LOG_DIR	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_LOG_DIR=%HADOOP_LOG_DIR%\\%USERNAME%$/;"	v
+HADOOP_LOG_DIR	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_LOG_DIR=%HADOOP_LOG_DIR%\\%USERNAME%$/;"	v
+HADOOP_MAPRED_ROOT_LOGGER	hdfs/hadoop_config_files/mapred-env.cmd	/^set HADOOP_MAPRED_ROOT_LOGGER=%HADOOP_LOGLEVEL%,RFA$/;"	v
+HADOOP_MAPRED_ROOT_LOGGER	pinot/hdfs-production/hadoop/mapred-env.cmd	/^set HADOOP_MAPRED_ROOT_LOGGER=%HADOOP_LOGLEVEL%,RFA$/;"	v
+HADOOP_NAMENODE_INIT_HEAPSIZE	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_NAMENODE_INIT_HEAPSIZE=""$/;"	v
+HADOOP_NAMENODE_INIT_HEAPSIZE	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_NAMENODE_INIT_HEAPSIZE=""$/;"	v
+HADOOP_NAMENODE_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_NAMENODE_OPTS=-Dhadoop.security.logger=%HADOOP_SECURITY_LOGGER% -Dhdfs.audit.logger=%HDFS_AUDIT_LOGGER% %HADOOP_NAMENODE_OPTS%$/;"	v
+HADOOP_NAMENODE_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_NAMENODE_OPTS=-Dhadoop.security.logger=%HADOOP_SECURITY_LOGGER% -Dhdfs.audit.logger=%HDFS_AUDIT_LOGGER% %HADOOP_NAMENODE_OPTS%$/;"	v
+HADOOP_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set HADOOP_OPTS=%HADOOP_OPTS% -Djava.net.preferIPv4Stack=true$/;"	v
+HADOOP_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set HADOOP_OPTS=%HADOOP_OPTS% -Djava.net.preferIPv4Stack=true$/;"	v
+HADOOP_PID_DIR	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_PID_DIR=%HADOOP_PID_DIR%$/;"	v
+HADOOP_PID_DIR	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_PID_DIR=%HADOOP_PID_DIR%$/;"	v
+HADOOP_SECONDARYNAMENODE_OPTS	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_SECONDARYNAMENODE_OPTS=-Dhadoop.security.logger=%HADOOP_SECURITY_LOGGER% -Dhdfs.audit.logger=%HDFS_AUDIT_LOGGER% %HADOOP_SECONDARYNAMENODE_OPTS%$/;"	v
+HADOOP_SECONDARYNAMENODE_OPTS	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_SECONDARYNAMENODE_OPTS=-Dhadoop.security.logger=%HADOOP_SECURITY_LOGGER% -Dhdfs.audit.logger=%HDFS_AUDIT_LOGGER% %HADOOP_SECONDARYNAMENODE_OPTS%$/;"	v
+HADOOP_SECURE_DN_LOG_DIR	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_SECURE_DN_LOG_DIR=%HADOOP_LOG_DIR%\\%HADOOP_HDFS_USER%$/;"	v
+HADOOP_SECURE_DN_LOG_DIR	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_SECURE_DN_LOG_DIR=%HADOOP_LOG_DIR%\\%HADOOP_HDFS_USER%$/;"	v
+HADOOP_SECURE_DN_PID_DIR	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_SECURE_DN_PID_DIR=%HADOOP_PID_DIR%$/;"	v
+HADOOP_SECURE_DN_PID_DIR	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_SECURE_DN_PID_DIR=%HADOOP_PID_DIR%$/;"	v
+HADOOP_SECURE_DN_USER	hdfs/hadoop_config_files/hadoop-env.cmd	/^set HADOOP_SECURE_DN_USER=%HADOOP_SECURE_DN_USER%$/;"	v
+HADOOP_SECURE_DN_USER	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set HADOOP_SECURE_DN_USER=%HADOOP_SECURE_DN_USER%$/;"	v
+HADOOP_SECURITY_LOGGER	hdfs/hadoop_config_files/hadoop-env.cmd	/^  set HADOOP_SECURITY_LOGGER=INFO,RFAS$/;"	v
+HADOOP_SECURITY_LOGGER	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^  set HADOOP_SECURITY_LOGGER=INFO,RFAS$/;"	v
+HADOOP_YARN_USER	hdfs/hadoop_config_files/yarn-env.cmd	/^  set HADOOP_YARN_USER=%yarn%$/;"	v
+HADOOP_YARN_USER	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set HADOOP_YARN_USER=%yarn%$/;"	v
+HDFS_AUDIT_LOGGER	hdfs/hadoop_config_files/hadoop-env.cmd	/^  set HDFS_AUDIT_LOGGER=INFO,NullAppender$/;"	v
+HDFS_AUDIT_LOGGER	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^  set HDFS_AUDIT_LOGGER=INFO,NullAppender$/;"	v
+JAVA_HEAP_MAX	hdfs/hadoop_config_files/yarn-env.cmd	/^  set JAVA_HEAP_MAX=-Xmx%YARN_HEAPSIZE%m$/;"	v
+JAVA_HEAP_MAX	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set JAVA_HEAP_MAX=-Xmx%YARN_HEAPSIZE%m$/;"	v
+JAVA_HOME	hdfs/hadoop_config_files/hadoop-env.cmd	/^set JAVA_HOME=%JAVA_HOME%$/;"	v
+JAVA_HOME	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^set JAVA_HOME=%JAVA_HOME%$/;"	v
+JSVC_HOME	hdfs/hadoop_config_files/hadoop-env.cmd	/^@rem set JSVC_HOME=%JSVC_HOME%$/;"	v
+JSVC_HOME	pinot/hdfs-production/hadoop/hadoop-env.cmd	/^@rem set JSVC_HOME=%JSVC_HOME%$/;"	v
+PATTERN	beats/Makefile	/^PATTERN := standard-ubuntu-1804$/;"	m
+SHELL	beats/Makefile	/^SHELL:=\/bin\/bash -eux$/;"	m
+TestModule	ansible-for-devops/chapter-7/filter-plugin/test_plugins/blue.py	/^class TestModule(object):$/;"	c
+YARN_CONF_DIR	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_CONF_DIR=%HADOOP_YARN_HOME%\\conf$/;"	v
+YARN_CONF_DIR	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_CONF_DIR=%HADOOP_YARN_HOME%\\conf$/;"	v
+YARN_LOGFILE	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_LOGFILE=yarn.log$/;"	v
+YARN_LOGFILE	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_LOGFILE=yarn.log$/;"	v
+YARN_LOG_DIR	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_LOG_DIR=%HADOOP_YARN_HOME%\\logs$/;"	v
+YARN_LOG_DIR	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_LOG_DIR=%HADOOP_YARN_HOME%\\logs$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_OPTS=%YARN_OPTS% -Djava.library.path=%JAVA_LIBRARY_PATH%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.home.dir=%HADOOP_YARN_HOME%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.log.dir=%YARN_LOG_DIR%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.log.file=%YARN_LOGFILE%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.root.logger=%YARN_ROOT_LOGGER%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.home.dir=%HADOOP_YARN_HOME%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.id.str=%YARN_IDENT_STRING%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.log.dir=%YARN_LOG_DIR%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.log.file=%YARN_LOGFILE%$/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.policy.file=%YARN_POLICYFILE%/;"	v
+YARN_OPTS	hdfs/hadoop_config_files/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.root.logger=%YARN_ROOT_LOGGER%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_OPTS=%YARN_OPTS% -Djava.library.path=%JAVA_LIBRARY_PATH%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.home.dir=%HADOOP_YARN_HOME%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.log.dir=%YARN_LOG_DIR%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.log.file=%YARN_LOGFILE%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dhadoop.root.logger=%YARN_ROOT_LOGGER%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.home.dir=%HADOOP_YARN_HOME%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.id.str=%YARN_IDENT_STRING%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.log.dir=%YARN_LOG_DIR%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.log.file=%YARN_LOGFILE%$/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.policy.file=%YARN_POLICYFILE%/;"	v
+YARN_OPTS	pinot/hdfs-production/hadoop/yarn-env.cmd	/^set YARN_OPTS=%YARN_OPTS% -Dyarn.root.logger=%YARN_ROOT_LOGGER%$/;"	v
+YARN_POLICYFILE	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_POLICYFILE=hadoop-policy.xml$/;"	v
+YARN_POLICYFILE	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_POLICYFILE=hadoop-policy.xml$/;"	v
+YARN_ROOT_LOGGER	hdfs/hadoop_config_files/yarn-env.cmd	/^  set YARN_ROOT_LOGGER=%HADOOP_LOGLEVEL%,console$/;"	v
+YARN_ROOT_LOGGER	pinot/hdfs-production/hadoop/yarn-env.cmd	/^  set YARN_ROOT_LOGGER=%HADOOP_LOGLEVEL%,console$/;"	v
+app	ansible-for-devops/chapter-4/centos-nodejs/app/app.js	/^var app = express();$/;"	v
+app	ansible-for-devops/chapter-6/nodejs/app/app.js	/^var app = express();$/;"	v
+app	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^app = Flask(__name__)$/;"	v
+bp	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^bp = Blueprint(__name__, 'api', url_prefix='\/api\/v4')$/;"	v
+express	ansible-for-devops/chapter-4/centos-nodejs/app/app.js	/^var express = require('express');$/;"	v
+express	ansible-for-devops/chapter-6/nodejs/app/app.js	/^var express = require('express');$/;"	v
+is_blue	ansible-for-devops/chapter-7/filter-plugin/test_plugins/blue.py	/^def is_blue(string):$/;"	f
+pid	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^    pid = str(os.getpid())$/;"	v
+pidfile	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^    pidfile = os.path.expanduser(sys.argv[1])$/;"	v
+port	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^    port = int(sys.argv[2])$/;"	v
+register_runner	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^def register_runner():$/;"	f
+tests	ansible-for-devops/chapter-7/filter-plugin/test_plugins/blue.py	/^    def tests(self):$/;"	m	class:TestModule
+verify_runner	ansible-gitlab-runner/tests/files/mock_gitlab_runner_ci.py	/^def verify_runner():$/;"	f

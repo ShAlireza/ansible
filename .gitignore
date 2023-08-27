@@ -3,3 +3,4 @@ venv/
 env/
 *hosts.ini
 *hosts.yml
+ad-hocs/

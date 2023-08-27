@@ -1,4 +1,13 @@
 - name: beautifilize
-  hosts: servers
+  hosts: my_vms
   roles:
     - beautifulize
+  vars:
+    - add_ssh_key: no
+    - install_packages: yes
+
+- name: enable byobu
+  hosts: my_vms
+  tasks:
+    - name: enable byobu
+      command: "byobu-enable"

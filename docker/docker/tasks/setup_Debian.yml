@@ -1,0 +1,31 @@
+---
+- name: Uninstall old versions
+  package:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+
+- name: Install dependencies
+  apt:
+    name:
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    update_cache: yes
+
+- name: Add Docker apt gpg key
+  apt_key:
+    url: "{{ docker_apt_gpg_key_url }}"
+    state: present
+  register: add_key
+  
+- name: Add Docker repository
+  apt_repository:
+    update_cache: yes
+    repo: "{{ docker_apt_repo }}"
+    state: present

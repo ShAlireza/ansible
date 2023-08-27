@@ -1,0 +1,8 @@
+---
+# tasks file for filebeat
+- name: Download filebeat
+  unarchive:
+    remote_src: yes
+    src: "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{{ filebeat_version }}-linux-x86_64.tar.gz"
+    dest: "{{ filebeat_download_path }}"
+
